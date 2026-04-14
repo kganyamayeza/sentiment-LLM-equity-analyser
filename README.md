@@ -1,4 +1,4 @@
-# SentimentAlpha — NLP Equity Sentiment Analyser
+# SentimentAlpha — Equity llm  Sentiment Analyser
 
 > Extract investment signals from financial news using NLP. Backtested across 8 S&P 500 companies (2020–2024)
 
