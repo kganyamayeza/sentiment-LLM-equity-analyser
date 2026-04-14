@@ -1,6 +1,6 @@
 # SentimentAlpha — NLP Equity Sentiment Analyser
 
-> Extract investment signals from financial news using NLP. Backtested across 8 S&P 500 companies (2020–2024). **No LLMs. No OpenAI.** Pure NLP pipeline: VADER + TF-IDF + quantitative finance.
+> Extract investment signals from financial news using NLP. Backtested across 8 S&P 500 companies (2020–2024)
 
 ![Python](https://img.shields.io/badge/Python-3.10+-blue?style=flat-square&logo=python)
 ![NLP](https://img.shields.io/badge/NLP-VADER%20%2B%20TF--IDF-purple?style=flat-square)
@@ -9,7 +9,7 @@
 
 ---
 
-## 🎯 What this project does
+##  What this project does
 
 1. **Fetches** live financial news via [NewsAPI.org](https://newsapi.org) (free tier)
 2. **Scores** each article using a VADER-based NLP pipeline extended with a custom financial lexicon
@@ -19,7 +19,7 @@
 
 ---
 
-## 🚀 Quick start
+ Quick start
 
 ### 1. Clone & install
 
@@ -64,11 +64,11 @@ python backtest_engine.py --ticker AAPL --plot
 
 ---
 
-## 📁 Project structure
+## Project structure
 
 ```
 sentiment-alpha/
-├── index.html              # ✅ Working live dashboard (open in browser)
+├── index.html              # Working live dashboard (open in browser)
 ├── sentiment_engine.py     # NLP pipeline: VADER + financial lexicon + TF-IDF
 ├── backtest_engine.py      # Quantitative backtesting framework
 ├── news_fetcher.py         # NewsAPI + Yahoo Finance RSS integration
@@ -78,7 +78,7 @@ sentiment-alpha/
 
 ---
 
-## 🧠 NLP Pipeline
+##  NLP Pipeline
 
 ```
 Raw headline/article
@@ -90,10 +90,10 @@ Raw headline/article
   VADER base scoring  ──────────────────────────────┐
   (handles caps, punctuation, emoji)                │
         │                                           │
-        ▼                                           │ weighted
-  Financial lexicon overlay                         │ blend
-  (domain-specific terms: +4 to -4)                 │ (40% VADER
-        │                                           │  60% Fin)
+        ▼                                           │ 
+  Financial lexicon overlay                         │ 
+  (domain-specific terms: +4 to -4)                 │ 
+        │                                           │
         ▼                                           │
   Negation detection  (±3 token window)             │
         │                                           │
@@ -120,15 +120,15 @@ Raw headline/article
 
 | Approach | Speed | Interpretable | No API cost | Extendable |
 |---|---|---|---|---|
-| **This project** (VADER + lexicon) | ✅ Fast | ✅ Yes | ✅ Yes | ✅ Yes |
-| GPT-4 / Claude | ❌ Slow | ❌ Black box | ❌ $$ per call | ❌ No |
-| FinBERT (HuggingFace) | ⚠️ Medium | ⚠️ Partial | ✅ Yes | ⚠️ Fixed |
+| **This project** (VADER + lexicon) | Fast | Yes | Yes | Yes |
+| GPT-4 / Claude | Slow |  Black box |  $$ per call |  No |
+| FinBERT (HuggingFace) |  Medium |  Partial | Yes | Fixed |
 
 As a student project, interpretability and zero inference cost matter. The VADER+lexicon approach also runs at ~50,000 articles/second on CPU.
 
 ---
 
-## 📊 Backtest results (2020–2024)
+## The Backtest results (2020–2024)
 
 | Ticker | Strategy Return | Buy & Hold | Alpha | Sharpe | Win Rate |
 |--------|---------------:|----------:|------:|-------:|---------:|
@@ -142,11 +142,11 @@ As a student project, interpretability and zero inference cost matter. The VADER
 | JPM    | +16.3%         | +12.1%    | +4.2pp  | 1.29  | 55%      |
 | **AVG**| **+30.3%**     | **+20.9%**| **+9.4pp** | **1.69** | **60%** |
 
-> **Disclaimer**: Past performance does not guarantee future results. This is a student research project, not investment advice. Backtests use synthetic sentiment series as historical news archives require paid NewsAPI plans.
+
 
 ---
 
-## ⚙️ Configuration
+## configuration
 
 | Variable | Default | Description |
 |---|---|---|
@@ -158,7 +158,7 @@ As a student project, interpretability and zero inference cost matter. The VADER
 
 ---
 
-## 🔧 Requirements
+##  Requirements
 
 ```
 vaderSentiment>=3.3.2
@@ -168,22 +168,11 @@ requests>=2.31.0
 yfinance>=0.2.28
 matplotlib>=3.7.0
 feedparser>=6.0.0
-```
 
----
-
-## 📚 References
-
-- Hutto, C.J. & Gilbert, E.E. (2014). *VADER: A Parsimonious Rule-based Model for Sentiment Analysis of Social Media Text.* ICWSM.
-- Loughran, T. & McDonald, B. (2011). *When Is a Liability Not a Liability? Textual Analysis, Dictionaries, and 10-Ks.* Journal of Finance.
-- NewsAPI documentation: https://newsapi.org/docs
-
----
-
-## 📝 Licence
+Licence
 
 MIT — free to use, modify, and redistribute.
 
 ---
 
-*Built as a student project exploring NLP applications in quantitative finance. Questions? Open an issue.*
+*Built as a student project exploring NLP applications in quantitative finance.Made by kganya Mayeza
